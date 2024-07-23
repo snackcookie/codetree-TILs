@@ -35,6 +35,9 @@ int main() {
                 found = true; // 찾았음을 표시
                 break;
             }
+            else{
+                col = i;
+            }
         }
     }
     for(int x = k - 1; x < k + m - 1; x++) // k는 1부터 시작하므로 k-1로 조정
