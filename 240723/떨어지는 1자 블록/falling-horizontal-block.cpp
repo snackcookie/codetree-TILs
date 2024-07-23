@@ -22,15 +22,17 @@ int main() {
         }
     }
 
-    int col = 0;
+    int col = -1; // 찾은 위치를 저장할 변수, 초기값은 -1
+    bool found = false; // 찾았는지 여부를 저장할 플래그 변수
 
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < n && !found; ++i) // found가 true이면 루프 종료
     {
         for(int j = k - 1; j < k + m - 1; j++) // k는 1부터 시작하므로 k-1로 조정
-        {
-            if(InRange(i, j) && InRange(i + 1, j) && matrix[i + 1][j] == 1)
-            {   
-                col = i - 1;
+        {   
+            if(InRange(i + 1, j) && matrix[i + 1][j] == 1)
+            {
+                col = i;
+                found = true; // 찾았음을 표시
                 break;
             }
         }
@@ -46,6 +48,7 @@ int main() {
             cout << matrix[i][j] << " ";
         cout << endl;
     }
+    
 
     return 0;
 }
