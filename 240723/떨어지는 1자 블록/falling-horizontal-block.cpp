@@ -22,11 +22,11 @@ int main() {
         }
     }
 
-    int col;
+    int col = 0;
 
     for(int i = 0; i < n; i++)
     {
-        for(int j = k - 1; j < k + m - 2; j++) // k는 1부터 시작하므로 k-1로 조정
+        for(int j = k - 1; j < k + m - 1; j++) // k는 1부터 시작하므로 k-1로 조정
         {
             if(InRange(i, j) && InRange(i + 1, j) && matrix[i + 1][j] == 1)
             {   
